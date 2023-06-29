@@ -10,19 +10,15 @@
 body {
   padding: 30px;
   font-family: variables.$apple-font;
-  background-color: rgb(231, 231, 255);
 }
 main {
+  background-color: rgb(237, 237, 237);
   padding: 20px 50px;
   border-radius: 20px;
-  max-width: fit-content;
+  max-width: 550px;
+  width: 90%;
   margin: auto;
 
-  // glassmorphism
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(9.5px);
-  -webkit-backdrop-filter: blur(9.5px);
   border-radius: 10px;
 }
 

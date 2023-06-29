@@ -9,9 +9,11 @@ form {
     // display: block;
   }
   input {
-    padding: 5px 10px;
+    padding: 13px;
     border-radius: 4px;
     border: none;
+    width: 100%;
+    font-size: 14px;
     background-color: variables.$light-gray;
     &:focus {
       outline: none;
@@ -27,14 +29,16 @@ form {
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
+    
   }
 
-  select{
-    border: 1px solid rgba(128, 128, 128, 0.575);
+  select {
+    width: 100%;
+    padding: 10px;
     border-radius: 6px;
-    padding: 5px;
-    font-size: 16px;
-    &:focus{
+    margin-bottom: 5px;
+    font-size: 14px;
+    &:focus {
       outline: none;
     }
   }

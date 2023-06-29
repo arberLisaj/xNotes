@@ -46,6 +46,7 @@ const ExpenseForm = ({ onSubmit }: Props) => {
           id="description"
           type="text"
           className="form-control"
+          placeholder="add a description"
         />
         {errors.description && (
           <p className="text-danger">{errors.description.message}</p>
@@ -60,6 +61,7 @@ const ExpenseForm = ({ onSubmit }: Props) => {
           id="amount"
           type="number"
           className="form-control"
+          placeholder="add the value"
         />
         {errors.amount && (
           <p className="text-danger">{errors.amount.message}</p>

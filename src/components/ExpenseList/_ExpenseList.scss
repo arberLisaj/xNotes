@@ -1,31 +1,28 @@
 @use "../../Styles/variables";
 table {
   margin-top: 20px;
-  width: 100%;
+  min-width: 100%;
   border-collapse: collapse;
-  background-color: variables.$light-gray;
-  tr,
+
   td,
   th {
+    border: 1px solid rgb(184, 184, 184);
     padding: 10px;
   }
-  tr:nth-of-type(even) {
-    background-color: variables.$white;
+  th{
+    color: gray;
+    text-align: left;
   }
 
-  thead,
-  tfoot {
-    background-color: rgb(198, 198, 198);
-    color: variables.$white;
-  }
   button {
     border: none;
     display: grid;
     place-content: center;
-    padding: 5px 10px;
-    cursor: pointer;
     color: variables.$danger-clr;
-
+    padding-inline: 10px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
     background-color: transparent;
   }
 }
