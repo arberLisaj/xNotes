@@ -1,7 +1,7 @@
 # React Expense List 💰
 View Live Demo : https://arberlisaj.github.io/react-expense-list/
 
-##  Features:
+##  Features
 - ➕ Add Expenses 
 - 🗑️ Delete your Expenses 
 - 🔍 Filter your Expenses by Category
