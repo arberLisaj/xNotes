@@ -1,9 +1,8 @@
 import { useState } from "react";
-import "./Styles/styles.css";
-import ExpenseFilter from "./components/ExpenseFilter/ExpenseFilter";
-import ExpenseList from "./components/ExpenseList/ExpenseList";
-import ExpenseForm from "./components/ExpenseForm/ExpenseForm";
-
+import ExpenseFilter from "./components/ExpenseFilter";
+import ExpenseForm from "./components/ExpenseForm";
+import ExpenseList from "./components/ExpenseList";
+import "./styles/styles.css";
 const App = () => {
   const [expenses, setExpenses] = useState([
     { id: 333, description: "electricity", amount: 30, category: "Utilities" },

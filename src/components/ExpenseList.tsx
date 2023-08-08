@@ -1,4 +1,4 @@
-import {FiDelete} from "react-icons/fi";
+import { FiDelete } from "react-icons/fi";
 
 interface Expenses {
   id: number;
@@ -12,7 +12,6 @@ interface Props {
   onDelete: (id: number) => void;
 }
 const ExpenseList = ({ expenses, onDelete }: Props) => {
-  // first we check the expense list length
   if (expenses.length === 0) return null;
   return (
     <table>
@@ -25,7 +24,6 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
         </tr>
       </thead>
       <tbody>
-        {/*  rendering the expenses  */}
         {expenses.map((expense) => (
           <tr key={expense.id}>
             <td>{expense.description}</td>
@@ -43,7 +41,6 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
         <tr>
           <td>Total:</td>
           <td>
-            {/* adding the total together with reduce method  */}$
             {expenses
               .reduce((total, expense) => expense.amount + total, 0)
               .toFixed(2)}
