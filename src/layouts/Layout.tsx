@@ -4,7 +4,7 @@ import "../styles/styles.css";
 
 const Layout = () => (
   <>
-    <main id="main">
+    <main className="px-2">
       <Navbar />
       <Outlet />
     </main>

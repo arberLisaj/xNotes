@@ -1,9 +1,9 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import Layout from "./layouts/Layout";
-import Expenses from "./pages/Expenses";
 import ErrorPage from "./pages/ErrorPage";
-import NotFound from "./pages/NotFound";
-import Tasks from "./pages/Tasks";
+import NewTaskPage from "./pages/tasks/NewTaskPage";
+import TaskListPage from "./pages/tasks/TaskListPage";
+import ExpenseListPage from "./pages/expenses/ExpenseListPage";
 
 const router = createBrowserRouter([
   {
@@ -17,13 +17,15 @@ const router = createBrowserRouter([
       },
       {
         path: "tasks",
-        element: <Tasks />,
+        children: [
+          { index: true, element: <TaskListPage /> },
+          { path: "new", element: <NewTaskPage /> },
+        ],
       },
       {
         path: "expenses",
-        element: <Expenses />,
+        element: <ExpenseListPage />,
       },
-      { path: "*", element: <NotFound /> },
     ],
   },
 ]);
