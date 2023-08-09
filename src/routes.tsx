@@ -3,6 +3,7 @@ import Layout from "./layouts/Layout";
 import Expenses from "./pages/Expenses";
 import ErrorPage from "./pages/ErrorPage";
 import NotFound from "./pages/NotFound";
+import Tasks from "./pages/Tasks";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         index: true,
         element: <Navigate to="expenses" replace />,
+      },
+      {
+        path: "tasks",
+        element: <Tasks />,
       },
       {
         path: "expenses",

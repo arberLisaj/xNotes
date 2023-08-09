@@ -7,3 +7,9 @@
     @apply rounded-sm p-2 text-sm hover:bg-gray-100 active:bg-gray-200;
   }
 }
+* {
+  font-family: "Poppins", sans-serif;
+}
+.active {
+  background-color: rgba(220, 220, 220, 0.397);
+}
