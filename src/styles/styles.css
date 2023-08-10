@@ -6,15 +6,21 @@
   header .link {
     @apply rounded-sm p-2 text-sm hover:bg-gray-100 active:bg-gray-200;
   }
+  tr {
+    @apply flex justify-between items-center text-sm hover:bg-gray-50;
+  }
+  td,
   th {
-    @apply text-left p-3 font-normal text-gray-800 w-full;
+    @apply w-full border p-3 text-gray-700;
   }
-  th button {
-    @apply flex items-center gap-2 p-1 text-sm rounded px-2 hover:bg-gray-100 active:text-gray-600;
+  th {
+    @apply flex font-normal items-center gap-1 p-2 cursor-pointer hover:bg-gray-100;
   }
-
+  td {
+    @apply py-2.5;
+  }
   select {
-    @apply mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-pointer;
+    @apply mb-3 bg-gray-50 border appearance-none border-gray-300 text-gray-900 text-sm rounded block w-full p-2.5 cursor-pointer;
   }
   option {
     @apply: border-none;

@@ -1,7 +1,16 @@
 import PageHeader from "../../components/ui/PageHeader";
 import { BiPlus } from "react-icons/bi";
-import ExpenseTable from "../../features/expense/ExpenseTable";
+import TaskTable from "../../features/tasks/TaskTable";
 const TaskListPage = () => {
+  const task = [
+    {
+      id: 0,
+      title: "do the dishez",
+      status: "Done",
+      priority: "High",
+      category: "Work",
+    },
+  ];
   return (
     <section>
       <PageHeader
@@ -14,7 +23,7 @@ const TaskListPage = () => {
           </>
         }
       />
-      <ExpenseTable expenses="" />
+      <TaskTable tasks={task} />
     </section>
   );
 };
