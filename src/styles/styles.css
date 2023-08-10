@@ -7,12 +7,12 @@
     @apply rounded-sm p-2 text-sm hover:bg-gray-100 active:bg-gray-200;
   }
   th {
-    @apply text-left p-3 font-normal text-gray-800;
+    @apply text-left p-3 font-normal text-gray-800 w-full;
+  }
+  th button {
+    @apply flex items-center gap-2 p-1 text-sm rounded px-2 hover:bg-gray-100 active:text-gray-600;
   }
 }
 * {
   font-family: "Poppins", sans-serif;
-}
-.active {
-  background-color: rgba(220, 220, 220, 0.303);
 }

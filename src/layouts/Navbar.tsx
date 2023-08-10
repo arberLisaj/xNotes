@@ -5,14 +5,14 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
   return (
-    <header className="py-4 max-w-full border-b transition-all">
+    <header className="max-w-full py-4 transition-all border-b">
       <nav className="flex justify-between items-center max-w-[1200px] m-auto">
         <Link to="/" className="text-xl">
           xNotes
         </Link>
         <section className="flex items-center gap-3">
           <button
-            className="p-2 rounded-sm hover:bg-gray-100 active:bg-gray-200 text-xl"
+            className="p-2 text-xl rounded-sm hover:bg-gray-100 active:bg-gray-200"
             onClick={() => setDarkMode(!darkMode)}
           >
             {darkMode ? <BsMoon /> : <BsSun />}
@@ -24,7 +24,7 @@ const Navbar = () => {
           <NavLink to="expenses" className="link">
             Expenses
           </NavLink>
-          <button className="text-sm p-2 bg-blue-600 text-gray-100 rounded-sm px-5  hover:bg-blue-500 active:bg-blue-600">
+          <button className="p-2 px-5 text-sm text-gray-100 bg-blue-600 rounded-sm hover:bg-blue-500 active:bg-blue-600">
             Log in
           </button>
         </section>

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import PageHeader from "../../components/ui/PageHeader";
 import { BiPlus } from "react-icons/bi";
 import ExpenseTable from "../../features/expense/ExpenseTable";
@@ -7,11 +6,12 @@ const TaskListPage = () => {
     <section>
       <PageHeader
         title="Tasks"
+        linkAddress="new"
         buttonSection={
-          <Link to="new" className="flex items-center gap-1">
+          <>
             <BiPlus />
             new
-          </Link>
+          </>
         }
       />
       <ExpenseTable />
