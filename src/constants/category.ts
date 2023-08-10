@@ -1,2 +1,2 @@
-const CATEGORY_OPTIONS = ["Groceries", "Utilities", "Entertainment"] as const;
-export default CATEGORY_OPTIONS;
+const CATEGORY = ["Work", "Personal"] as const;
+export default CATEGORY;

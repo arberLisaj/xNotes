@@ -1,10 +1,19 @@
-import Button from "../../components/ui/Button";
-
+import Form from "../../components/ui/Form";
+import PageHeader from "../../components/ui/PageHeader";
+import { MdOutlineArrowBack } from "react-icons/md";
 const NewTaskPage = () => {
   return (
-    <section>
-      <Button linkAddress="/q">back</Button>
-      <h1>Add new task</h1>
+    <section className="max-w-[1200px] m-auto">
+      <PageHeader
+        title={"Create"}
+        buttonSection={
+          <>
+            <MdOutlineArrowBack /> Back
+          </>
+        }
+        linkAddress={"/"}
+      />
+      <Form />
     </section>
   );
 };

@@ -14,7 +14,7 @@ const TaskListPage = () => {
           </>
         }
       />
-      <ExpenseTable />
+      <ExpenseTable expenses="" />
     </section>
   );
 };

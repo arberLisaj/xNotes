@@ -12,6 +12,13 @@
   th button {
     @apply flex items-center gap-2 p-1 text-sm rounded px-2 hover:bg-gray-100 active:text-gray-600;
   }
+
+  select {
+    @apply mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-pointer;
+  }
+  option {
+    @apply: border-none;
+  }
 }
 * {
   font-family: "Poppins", sans-serif;

@@ -1,18 +1,20 @@
 import { ReactNode } from "react";
-import { Link } from "react-router-dom";
+
 interface Props {
   children: ReactNode;
-  linkAddress: string;
+  handleClick: () => void;
+  tailwindClasses: string;
 }
-const button = ({ children, linkAddress }: Props) => {
+
+const Button = ({ children, handleClick, tailwindClasses }: Props) => {
   return (
-    <Link
-      to={linkAddress}
-      className="flex items-center gap-1 p-2 px-4 text-sm border  w-fit roudned hover:bg-gray-100 active:bg-white"
+    <button
+      className={tailwindClasses + " rounded p-2 px-3"}
+      onClick={handleClick}
     >
       {children}
-    </Link>
+    </button>
   );
 };
 
-export default button;
+export default Button;

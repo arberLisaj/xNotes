@@ -31,9 +31,13 @@ const ExpenseTable = ({ expenses }: Props) => {
         </tr>
       </thead>
       <tbody>
-        {!expenses && (
-          <p className="py-6 text-sm text-center text-gray-600">No results.</p>
-        )}
+        <tr>
+          {!expenses && (
+            <td className="py-6 text-sm text-center text-gray-600">
+              No results.
+            </td>
+          )}
+        </tr>
       </tbody>
     </table>
   );
