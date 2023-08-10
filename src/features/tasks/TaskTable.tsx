@@ -1,5 +1,5 @@
 import { RxCaretSort } from "react-icons/rx";
-import Task from "../../pages/tasks/Task";
+import Task from "./Task";
 export interface TaskStructure {
   id: number;
   title: string;

@@ -8,7 +8,7 @@ const TaskListPage = () => {
       title: "do the dishez",
       status: "Done",
       priority: "High",
-      category: "Work",
+      category: "Personal",
     },
   ];
   return (

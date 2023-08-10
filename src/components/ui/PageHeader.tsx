@@ -9,7 +9,7 @@ interface Props {
 
 const PageHeader = ({ title, buttonSection, linkAddress }: Props) => {
   return (
-    <section className="w-full max-w-[1200px] m-auto flex justify-between my-5">
+    <section className="w-full max-w-[1200px] m-auto flex items-center justify-between my-5">
       {title && <h1 className="text-2xl">{title}</h1>}
       {buttonSection && (
         <LinkButton linkAddress={linkAddress}>{buttonSection}</LinkButton>

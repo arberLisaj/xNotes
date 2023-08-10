@@ -7,7 +7,7 @@
     @apply rounded-sm p-2 text-sm hover:bg-gray-100 active:bg-gray-200;
   }
   tr {
-    @apply flex justify-between items-center text-sm hover:bg-gray-50;
+    @apply flex justify-between items-center text-sm;
   }
   td,
   th {
@@ -20,7 +20,7 @@
     @apply py-2.5;
   }
   select {
-    @apply mb-3 bg-gray-50 border appearance-none border-gray-300 text-gray-900 text-sm rounded block w-full p-2.5 cursor-pointer;
+    @apply mb-3 bg-gray-50 border appearance-none border-gray-300 text-gray-900 text-sm rounded block w-full max-w-[700px] p-2.5 cursor-pointer;
   }
   option {
     @apply: border-none;

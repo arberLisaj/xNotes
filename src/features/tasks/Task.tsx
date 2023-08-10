@@ -1,4 +1,4 @@
-import { TaskStructure } from "../../features/tasks/TaskTable";
+import { TaskStructure } from "./TaskTable";
 
 interface Props {
   task: TaskStructure;
@@ -10,9 +10,7 @@ const Task = ({ task }: Props) => {
       <td>{task.status}</td>
       <td>{task.priority}</td>
       <td>{task.category}</td>
-      <td>
-        ...
-      </td>
+      <td>...</td>
     </tr>
   );
 };

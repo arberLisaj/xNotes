@@ -4,6 +4,7 @@ import ErrorPage from "./pages/ErrorPage";
 import NewTaskPage from "./pages/tasks/NewTaskPage";
 import TaskListPage from "./pages/tasks/TaskListPage";
 import ExpenseListPage from "./pages/expenses/ExpenseListPage";
+import NewExpensePage from "./pages/expenses/NewExpensePage";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,10 @@ const router = createBrowserRouter([
       },
       {
         path: "expenses",
-        element: <ExpenseListPage />,
+        children: [
+          { index: true, element: <ExpenseListPage /> },
+          { path: "new", element: <NewExpensePage /> },
+        ],
       },
     ],
   },
