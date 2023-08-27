@@ -6,6 +6,7 @@ import STATUS from "../../constants/status";
 import Button from "../../components/ui/Button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import CATEGORY from "../../constants/category";
+import { useNavigate } from "react-router-dom";
 
 const schema = z.object({
   inputValue: z.string().min(3),
@@ -17,6 +18,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const TaskForm = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -27,16 +29,19 @@ const TaskForm = () => {
   const onSubmit = (data: FieldValues) => {
     console.log(data);
     reset();
+    navigate("/tasks");
   };
   return (
     <form onSubmit={handleSubmit((data) => onSubmit(data))}>
-      <label htmlFor="title" className="block">Title</label>
+      <label htmlFor="title" className="block">
+        Title
+      </label>
       <input
         {...register("inputValue")}
         type="text"
         id="title"
         placeholder="Description..."
-        className="w-full p-2.5 mb-3 max-w-[700px] text-sm border border-gray-300 rounded bg-gray-50"
+        className="w-full p-2 mb-3 max-w-[700px] text-sm border border-gray-300 rounded bg-gray-50"
       />
       {errors.inputValue && (
         <p className="mb-2 text-red-500">{errors.inputValue.message}</p>
@@ -62,7 +67,7 @@ const TaskForm = () => {
       </section>
       <section>
         <p>Priority</p>
-        <select {...register("priority")}>
+        <select {...register("priority")} className="mb-4">
           {PRIORITY.map((value, index) => (
             <option key={index} value={value}>
               {value}
@@ -71,10 +76,10 @@ const TaskForm = () => {
         </select>
       </section>
       <Button
-        tailwindClasses="bg-gray-800 text-gray-100 hover:bg-gray-600 active:bg-gray-900 mt-1"
+        className="bg-gray-800 text-gray-100 hover:bg-gray-600 active:bg-gray-900 capitalize px-3 py-2"
         handleClick={() => "hi"}
       >
-        create
+        create Task
       </Button>
     </form>
   );

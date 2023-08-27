@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
-import LinkButton from "./LinkButton";
+import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   title: string;
@@ -8,11 +9,14 @@ interface Props {
 }
 
 const PageHeader = ({ title, buttonSection, linkAddress }: Props) => {
+  const navigate = useNavigate();
   return (
-    <section className="w-full max-w-[1200px] m-auto flex items-center justify-between my-5">
+    <section className="w-full max-w-[1200px] m-auto flex items-center justify-between my-4">
       {title && <h1 className="text-2xl">{title}</h1>}
       {buttonSection && (
-        <LinkButton linkAddress={linkAddress}>{buttonSection}</LinkButton>
+        <Button handleClick={() => navigate(linkAddress)}>
+          {buttonSection}
+        </Button>
       )}
     </section>
   );

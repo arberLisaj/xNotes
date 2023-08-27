@@ -10,7 +10,7 @@ const Expense = ({ title, description, price, category }: Props) => {
       <h1 className="font-[500] text-2xl">{title}</h1>
       <p>{price}</p>
       <p>{category}</p>
-      <hr  className="my-1"/>
+      <hr className="my-1" />
       <p>{description}</p>
     </section>
   );

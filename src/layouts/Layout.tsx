@@ -1,10 +1,9 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
-import "../styles/styles.css";
 
 const Layout = () => (
   <>
-    <main className="px-2">
+    <main className="px-2 dark:bg-[#23272F] h-screen dark:text-white">
       <Navbar />
       <Outlet />
     </main>

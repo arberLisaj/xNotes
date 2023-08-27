@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import Navbar from "../../layouts/Navbar";
-import LinkButton from "./LinkButton";
+import Button from "./Button";
 
 const NotFound = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -10,12 +12,12 @@ const NotFound = () => {
         <p className="text-lg ">
           The page you tried to access could not be found
         </p>
-        <LinkButton
-          linkAddress="/"
-          tailwindClasses="m-auto mt-2 bg-gray-800 text-gray-100 rounded-md hover:bg-gray-600 active:bg-gray-900"
+        <Button
+          handleClick={() => navigate("/")}
+          className="m-auto mt-2 bg-gray-800 text-gray-100 roudned-sm hover:bg-gray-600 active:bg-gray-900"
         >
           Take me Home
-        </LinkButton>
+        </Button>
       </section>
     </>
   );

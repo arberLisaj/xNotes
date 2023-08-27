@@ -5,7 +5,7 @@ interface Props {
 }
 const Task = ({ task }: Props) => {
   return (
-    <tr className="flex items-center ">
+    <tr className="flex items-center">
       <td>{task.title}</td>
       <td>{task.status}</td>
       <td>{task.priority}</td>

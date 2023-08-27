@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  header .link {
+    @apply rounded-sm p-2 text-sm hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-gray-700;
+  }
+  tr {
+    @apply flex justify-between items-center text-sm border dark:border-gray-500;
+  }
+  td,
+  th {
+    @apply w-full p-3 text-gray-700 border-x dark:border-gray-500 dark:text-white;
+  }
+
+  th {
+    @apply flex font-normal items-center gap-1 p-2 cursor-pointer;
+  }
+  td {
+    @apply py-2.5;
+  }
+  select {
+    @apply mb-3 bg-gray-50 border appearance-none border-gray-300 text-gray-900 text-sm rounded block w-full max-w-[700px] p-2 cursor-pointer;
+  }
+  option {
+    @apply: border-none;
+  }
+}
+* {
+  font-family: "Poppins", sans-serif;
+}

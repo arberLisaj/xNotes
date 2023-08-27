@@ -2,14 +2,17 @@ import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
-  handleClick: () => void;
-  tailwindClasses: string;
+  handleClick?: () => void;
+  className?: string;
 }
 
-const Button = ({ children, handleClick, tailwindClasses }: Props) => {
+const Button = ({ children, handleClick, className }: Props) => {
   return (
     <button
-      className={tailwindClasses + " rounded p-2 px-3"}
+      className={
+        className +
+        " rounded p-1 px-2 flex items-center gap-1 border border-gray-300 text-sm"
+      }
       onClick={handleClick}
     >
       {children}
