@@ -1,4 +1,4 @@
-import PageHeader from "../../components/ui/PageHeader";
+import PageHeader from "../../components/PageHeader";
 import { BiPlus } from "react-icons/bi";
 import TaskTable from "../../features/tasks/TaskTable";
 const TaskListPage = () => {
@@ -9,7 +9,7 @@ const TaskListPage = () => {
         linkAddress="new"
         buttonSection={
           <>
-            <BiPlus className="text-base"/>
+            <BiPlus className="text-base" />
             new
           </>
         }

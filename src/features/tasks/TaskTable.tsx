@@ -1,4 +1,4 @@
-import useStore from "../../assets/store";
+import useStore from "../../store";
 import Task from "./Task";
 export interface TaskStructure {
   id: number;

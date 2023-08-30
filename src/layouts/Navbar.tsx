@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { BsMoon, BsSun } from "react-icons/bs";
 import { Link, NavLink } from "react-router-dom";
-import useStore from "../assets/store";
+import useStore from "../store";
 
 const Navbar = () => {
   const { darkMode, setDarkMode } = useStore();
@@ -14,19 +14,20 @@ const Navbar = () => {
   }, [darkMode]);
 
   return (
-    <header className="max-w-full py-2 border-b dark:border-gray-500 dark:text-gray-200">
+    <header className="max-w-full py-2 sticky top-0 dark:text-gray-200 bg-white dark:bg-gray-800 shadow-md">
       <nav className="flex justify-between items-center max-w-[1100px] m-auto">
-        <Link to="/" className="text-xl">
+        <Link to="/" className="text-xl" tabIndex={1}>
           xNotes
         </Link>
         <section className="flex items-center gap-3">
-          <NavLink to="tasks" className="link">
+          <NavLink to="tasks" className="link" tabIndex={2}>
             Task Board
           </NavLink>
-          <NavLink to="expenses" className="link">
+          <NavLink to="expenses" className="link" tabIndex={3}>
             Expenses
           </NavLink>
           <button
+            tabIndex={4}
             className="p-2 text-xl rounded-sm hover:bg-gray-100 active:bg-gray-200 dark:hover:bg-gray-700"
             onClick={() => setDarkMode()}
           >

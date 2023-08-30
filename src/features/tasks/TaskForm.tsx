@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import z from "zod";
-import Button from "../../components/ui/Button";
+import Button from "../../components/Button";
 import {
   default as CATEGORY,
   default as CATEGORY_OPTIONS,
@@ -10,7 +10,7 @@ import {
 import PRIORITY from "../../constants/priority";
 import STATUS from "../../constants/status";
 import { TaskStructure } from "./TaskTable";
-import useStore from "../../assets/store";
+import useStore from "../../store";
 
 const schema = z.object({
   inputValue: z.string().min(3),
@@ -45,23 +45,25 @@ const TaskForm = () => {
     navigate("/tasks");
   };
   return (
-    <form onSubmit={handleSubmit((data) => onSubmit(data))}>
-      <label htmlFor="title" className="block">
-        Title
-      </label>
+    <form
+      onSubmit={handleSubmit((data) => onSubmit(data))}
+      className="py-8 p-4 rounded border-2 dark:border-gray-700"
+    >
+      <label htmlFor="title">title</label>
       <input
         autoFocus
         {...register("inputValue")}
         type="text"
         id="title"
         placeholder="Description..."
-        className="w-full p-1.5 mb-1 max-w-[700px] text-sm border dark:bg-gray-200 border-gray-300 rounded bg-gray-50 text-black"
       />
       {errors.inputValue && (
-        <p className="mb-2 text-red-500 text-sm">{errors.inputValue.message}</p>
+        <p className="mb-2 text-red-500 text-sm dark:text-red-400">
+          {errors.inputValue.message}
+        </p>
       )}
 
-      <p>Category</p>
+      <label htmlFor="category">category</label>
       <select {...register("category")}>
         {CATEGORY_OPTIONS.map((category, index) => (
           <option key={index} value={category}>
@@ -70,8 +72,8 @@ const TaskForm = () => {
         ))}
       </select>
       <section>
-        <p>Status</p>
-        <select {...register("status")}>
+        <label htmlFor="status">Status</label>
+        <select id="status" {...register("status")}>
           {STATUS.map((status, index) => (
             <option key={index} value={status}>
               {status}
@@ -80,8 +82,8 @@ const TaskForm = () => {
         </select>
       </section>
       <section>
-        <p>Priority</p>
-        <select {...register("priority")}>
+        <label htmlFor="priority">Priority</label>
+        <select id="priority" {...register("priority")} className="mb-4">
           {PRIORITY.map((value, index) => (
             <option key={index} value={value}>
               {value}
@@ -90,11 +92,11 @@ const TaskForm = () => {
         </select>
       </section>
       <Button
-        type="button"
-        className="bg-gray-800 text-gray-100 hover:bg-gray-600 active:bg-gray-900 capitalize"
+        type="submit"
+        className="bg-gray-800 p-1.5 px-4 text-gray-100 hover:bg-gray-600 active:bg-gray-900 text-sm"
         handleClick={() => "hi"}
       >
-        create Task
+        create task
       </Button>
     </form>
   );

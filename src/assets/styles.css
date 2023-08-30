@@ -10,10 +10,16 @@
     @apply text-left  border-x  p-2 font-normal text-sm bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-500;
   }
   td {
-    @apply  p-2 max-w-[500px] px-3 border break-all border-gray-300 dark:border-gray-500;
+    @apply p-2 px-3 border break-all border-gray-300 dark:border-gray-500;
+  }
+  label {
+    @apply dark:text-gray-200 block capitalize mt-1;
+  }
+  input {
+    @apply w-full p-2  mb-1 max-w-[700px] outline-none text-sm dark:bg-gray-700 dark:text-gray-200 border dark:border-gray-700 border-gray-300 rounded text-black;
   }
   select {
-    @apply mb-3 bg-gray-50 border dark:bg-gray-300 appearance-none border-gray-300 text-gray-900 text-sm rounded block w-full max-w-[700px] p-1.5 cursor-pointer;
+    @apply mb-3 outline-none dark:bg-gray-700 dark:text-gray-200 dark:border-gray-700 appearance-none border-gray-300 text-gray-900 text-sm rounded border block w-full max-w-[700px] p-2 cursor-pointer;
   }
   option {
     @apply: border-none;

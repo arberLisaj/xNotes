@@ -1,16 +1,12 @@
-import Button from "../../components/ui/Button";
+import Button from "../../components/Button";
 
 const ExpenseForm = () => {
   return (
     <section className="w-full max-w-[1100px] m-auto">
-      <input
-        type="text"
-        className="block w-full p-2 border max-w-[700px] bg-gray-50 rounded"
-        placeholder="title"
-      />
+      <input type="text" placeholder="enter a title..." />
       <textarea
-        className="block w-full p-2 mt-3 border resize-none max-w-[700px] bg-gray-50 rounded"
-        placeholder="description"
+        className="block w-full p-2 mt-3 outline-none resize-none max-w-[700px] dark:text-white bg-gray-100 dark:bg-gray-700 rounded"
+        placeholder="description..."
       ></textarea>
       <select className="mt-3 text-gray-700 cursor-pointer">
         <option>Groceries</option>
@@ -20,7 +16,7 @@ const ExpenseForm = () => {
       <Button
         type="button"
         handleClick={() => console.log("hi")}
-        className="bg-gray-800 text-gray-100 mt-2 hover:bg-gray-700 active:bg-gray-900 px-3 py-2 capitalize"
+        className="bg-black text-white dark:bg-gray-700 p-2 px-4"
       >
         create expense
       </Button>
