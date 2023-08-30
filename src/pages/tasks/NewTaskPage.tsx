@@ -3,12 +3,12 @@ import { MdOutlineArrowBack } from "react-icons/md";
 import TaskForm from "../../features/tasks/TaskForm";
 const NewTaskPage = () => {
   return (
-    <section className="max-w-[1200px] m-auto">
+    <section className="max-w-[1100px] m-auto">
       <PageHeader
         title={"Create Task"}
         buttonSection={
           <>
-            <MdOutlineArrowBack /> Back
+            <MdOutlineArrowBack/> Back
           </>
         }
         linkAddress={"/"}

@@ -2,7 +2,7 @@ import Button from "../../components/ui/Button";
 
 const ExpenseForm = () => {
   return (
-    <section className="w-full max-w-[1200px] m-auto">
+    <section className="w-full max-w-[1100px] m-auto">
       <input
         type="text"
         className="block w-full p-2 border max-w-[700px] bg-gray-50 rounded"
@@ -18,6 +18,7 @@ const ExpenseForm = () => {
         <option>Entertainment</option>
       </select>
       <Button
+        type="button"
         handleClick={() => console.log("hi")}
         className="bg-gray-800 text-gray-100 mt-2 hover:bg-gray-700 active:bg-gray-900 px-3 py-2 capitalize"
       >

@@ -4,14 +4,16 @@ interface Props {
   children: ReactNode;
   handleClick?: () => void;
   className?: string;
+  type: "submit" | "reset" | "button";
 }
 
-const Button = ({ children, handleClick, className }: Props) => {
+const Button = ({ children, handleClick, className, type }: Props) => {
   return (
     <button
+      type={type}
       className={
         className +
-        " rounded p-1 px-2 flex items-center gap-1 border border-gray-300 text-sm"
+        " rounded p-1 px-2 flex items-center gap-1 text-sm dark:bg-gray-700"
       }
       onClick={handleClick}
     >

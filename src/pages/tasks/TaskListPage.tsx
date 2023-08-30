@@ -2,15 +2,6 @@ import PageHeader from "../../components/ui/PageHeader";
 import { BiPlus } from "react-icons/bi";
 import TaskTable from "../../features/tasks/TaskTable";
 const TaskListPage = () => {
-  const task = [
-    {
-      id: 0,
-      title: "do the dishez",
-      status: "Done",
-      priority: "High",
-      category: "Personal",
-    },
-  ];
   return (
     <section>
       <PageHeader
@@ -18,12 +9,12 @@ const TaskListPage = () => {
         linkAddress="new"
         buttonSection={
           <>
-            <BiPlus />
+            <BiPlus className="text-base"/>
             new
           </>
         }
       />
-      <TaskTable tasks={task} />
+      <TaskTable />
     </section>
   );
 };

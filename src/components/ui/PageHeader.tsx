@@ -11,10 +11,14 @@ interface Props {
 const PageHeader = ({ title, buttonSection, linkAddress }: Props) => {
   const navigate = useNavigate();
   return (
-    <section className="w-full max-w-[1200px] m-auto flex items-center justify-between my-4">
+    <section className="w-full max-w-[1100px] m-auto flex items-center justify-between my-4 dark:text-gray-200">
       {title && <h1 className="text-2xl">{title}</h1>}
       {buttonSection && (
-        <Button handleClick={() => navigate(linkAddress)}>
+        <Button
+          type="button"
+          handleClick={() => navigate(linkAddress)}
+          className="bg-black font-[500] text-white"
+        >
           {buttonSection}
         </Button>
       )}

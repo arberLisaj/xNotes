@@ -10,6 +10,7 @@ const ErrorComponent = () => {
         <p className="text-lg ">Oops,something went wrong. Please try again</p>
 
         <Button
+          type="button"
           handleClick={() => navigate("/")}
           className="m-auto mt-2 bg-gray-800 text-gray-100 rounded-md hover:bg-gray-600 active:bg-gray-900"
         >

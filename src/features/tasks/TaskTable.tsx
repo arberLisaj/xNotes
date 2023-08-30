@@ -1,3 +1,4 @@
+import useStore from "../../assets/store";
 import Task from "./Task";
 export interface TaskStructure {
   id: number;
@@ -6,26 +7,25 @@ export interface TaskStructure {
   priority: string;
   category: string;
 }
-interface Props {
-  tasks: TaskStructure[];
-}
-const TaskTable = ({ tasks }: Props) => {
+
+const TaskTable = () => {
+  const tasks = useStore((store) => store.tasks);
   return (
-    <table className="w-full max-w-[1200px] m-auto">
-      <thead className="">
-        <tr className="bg-gray-50 dark:bg-gray-700 ">
+    <table className="w-full max-w-[1100px] m-auto dark:text-gray-200">
+      <thead>
+        <tr className="border-y border-gray-300 dark:border-gray-500">
           <th>Title</th>
           <th>Status</th>
           <th>Priority</th>
           <th>Category</th>
-          <th></th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
-        {!tasks && (
+        {tasks.length === 0 && (
           <tr>
-            <td className="py-6 text-sm text-center text-gray-600 dark:text-white">
-              No results.
+            <td colSpan={5} className="text-center text-xs py-3">
+              Add your first task.
             </td>
           </tr>
         )}

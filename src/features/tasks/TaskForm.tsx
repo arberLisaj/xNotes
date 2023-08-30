@@ -1,12 +1,16 @@
-import z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, useForm } from "react-hook-form";
-import CATEGORY_OPTIONS from "../../constants/category";
+import { useNavigate } from "react-router-dom";
+import z from "zod";
+import Button from "../../components/ui/Button";
+import {
+  default as CATEGORY,
+  default as CATEGORY_OPTIONS,
+} from "../../constants/category";
 import PRIORITY from "../../constants/priority";
 import STATUS from "../../constants/status";
-import Button from "../../components/ui/Button";
-import { zodResolver } from "@hookform/resolvers/zod";
-import CATEGORY from "../../constants/category";
-import { useNavigate } from "react-router-dom";
+import { TaskStructure } from "./TaskTable";
+import useStore from "../../assets/store";
 
 const schema = z.object({
   inputValue: z.string().min(3),
@@ -26,8 +30,17 @@ const TaskForm = () => {
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
+  const addTask = useStore((store) => store.addTask);
   const onSubmit = (data: FieldValues) => {
-    console.log(data);
+    const newTask: TaskStructure = {
+      id: Date.now(),
+      title: data.inputValue,
+      status: data.status,
+      priority: data.priority,
+      category: data.category,
+    };
+    console.log(newTask);
+    addTask(newTask);
     reset();
     navigate("/tasks");
   };
@@ -37,14 +50,15 @@ const TaskForm = () => {
         Title
       </label>
       <input
+        autoFocus
         {...register("inputValue")}
         type="text"
         id="title"
         placeholder="Description..."
-        className="w-full p-2 mb-3 max-w-[700px] text-sm border border-gray-300 rounded bg-gray-50"
+        className="w-full p-1.5 mb-1 max-w-[700px] text-sm border dark:bg-gray-200 border-gray-300 rounded bg-gray-50 text-black"
       />
       {errors.inputValue && (
-        <p className="mb-2 text-red-500">{errors.inputValue.message}</p>
+        <p className="mb-2 text-red-500 text-sm">{errors.inputValue.message}</p>
       )}
 
       <p>Category</p>
@@ -67,7 +81,7 @@ const TaskForm = () => {
       </section>
       <section>
         <p>Priority</p>
-        <select {...register("priority")} className="mb-4">
+        <select {...register("priority")}>
           {PRIORITY.map((value, index) => (
             <option key={index} value={value}>
               {value}
@@ -76,7 +90,8 @@ const TaskForm = () => {
         </select>
       </section>
       <Button
-        className="bg-gray-800 text-gray-100 hover:bg-gray-600 active:bg-gray-900 capitalize px-3 py-2"
+        type="button"
+        className="bg-gray-800 text-gray-100 hover:bg-gray-600 active:bg-gray-900 capitalize"
         handleClick={() => "hi"}
       >
         create Task

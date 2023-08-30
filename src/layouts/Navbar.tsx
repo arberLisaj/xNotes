@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { BsMoon, BsSun } from "react-icons/bs";
 import { Link, NavLink } from "react-router-dom";
-import useLocalStorage from "../hooks/useLocalStorage";
+import useStore from "../assets/store";
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useLocalStorage("darkMode", "");
+  const { darkMode, setDarkMode } = useStore();
   const toggleDarkMode = () => {
     if (darkMode) document.documentElement.classList.add("dark");
     else document.documentElement.classList.remove("dark");
@@ -14,8 +14,8 @@ const Navbar = () => {
   }, [darkMode]);
 
   return (
-    <header className="max-w-full py-2 border-b dark:border-gray-500">
-      <nav className="flex justify-between items-center max-w-[1200px] m-auto">
+    <header className="max-w-full py-2 border-b dark:border-gray-500 dark:text-gray-200">
+      <nav className="flex justify-between items-center max-w-[1100px] m-auto">
         <Link to="/" className="text-xl">
           xNotes
         </Link>
@@ -28,7 +28,7 @@ const Navbar = () => {
           </NavLink>
           <button
             className="p-2 text-xl rounded-sm hover:bg-gray-100 active:bg-gray-200 dark:hover:bg-gray-700"
-            onClick={() => setDarkMode(!darkMode)}
+            onClick={() => setDarkMode()}
           >
             {darkMode ? <BsMoon /> : <BsSun />}
           </button>
