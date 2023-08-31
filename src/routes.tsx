@@ -1,10 +1,10 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import ErrorPage from "./pages/ErrorPage";
-import NewTaskPage from "./pages/tasks/NewTaskPage";
-import TaskListPage from "./pages/tasks/TaskListPage";
 import ExpenseListPage from "./pages/expenses/ExpenseListPage";
 import NewExpensePage from "./pages/expenses/NewExpensePage";
+import NewTaskPage from "./pages/tasks/NewTaskPage";
+import TaskListPage from "./pages/tasks/TaskListPage";
 
 const router = createBrowserRouter([
   {

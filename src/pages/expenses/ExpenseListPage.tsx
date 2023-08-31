@@ -10,7 +10,7 @@ const ExpenseListPage = () => {
         linkAddress="new"
         buttonSection={
           <>
-            <BiPlus />
+            <BiPlus className="text-base" />
             new
           </>
         }

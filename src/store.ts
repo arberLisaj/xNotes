@@ -1,10 +1,10 @@
 import { devtools, persist } from "zustand/middleware";
-import { TaskStructure } from "./features/tasks/TaskTable";
 import { create } from "zustand";
+import TaskType from "./entities/task";
 interface StoreType {
-  tasks: TaskStructure[];
+  tasks: TaskType[];
   deleteTask: (id: number) => void;
-  addTask: (task: TaskStructure) => void;
+  addTask: (task: TaskType) => void;
   darkMode: boolean;
   setDarkMode: () => void;
 }

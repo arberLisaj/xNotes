@@ -9,7 +9,7 @@ import {
 } from "../../constants/category";
 import PRIORITY from "../../constants/priority";
 import STATUS from "../../constants/status";
-import { TaskStructure } from "./TaskTable";
+
 import useStore from "../../store";
 
 const schema = z.object({
@@ -32,14 +32,13 @@ const TaskForm = () => {
 
   const addTask = useStore((store) => store.addTask);
   const onSubmit = (data: FieldValues) => {
-    const newTask: TaskStructure = {
+    const newTask = {
       id: Date.now(),
       title: data.inputValue,
       status: data.status,
       priority: data.priority,
       category: data.category,
     };
-    console.log(newTask);
     addTask(newTask);
     reset();
     navigate("/tasks");
@@ -64,7 +63,7 @@ const TaskForm = () => {
       )}
 
       <label htmlFor="category">category</label>
-      <select {...register("category")}>
+      <select {...register("category")} id="category">
         {CATEGORY_OPTIONS.map((category, index) => (
           <option key={index} value={category}>
             {category}

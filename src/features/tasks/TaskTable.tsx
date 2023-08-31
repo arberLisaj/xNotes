@@ -1,20 +1,13 @@
 import useStore from "../../store";
 import Task from "./Task";
-export interface TaskStructure {
-  id: number;
-  title: string;
-  status: string;
-  priority: string;
-  category: string;
-}
 
 const TaskTable = () => {
   const tasks = useStore((store) => store.tasks);
   return (
     <table className="w-full max-w-[1100px] m-auto dark:text-gray-200">
       <thead>
-        <tr className="border-y border-gray-300 dark:border-gray-500">
-          <th>Title</th>
+        <tr className="border-y border-gray-300 dark:border-gray-600">
+          <th className="text-left w-full">Title or Description</th>
           <th>Status</th>
           <th>Priority</th>
           <th>Category</th>

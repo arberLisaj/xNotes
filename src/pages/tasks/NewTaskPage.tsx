@@ -11,7 +11,7 @@ const NewTaskPage = () => {
             <MdOutlineArrowBack /> back
           </>
         }
-        linkAddress={"/"}
+        linkAddress={"/tasks"}
       />
       <TaskForm />
     </section>

@@ -8,7 +8,6 @@ const ErrorComponent = () => {
       <section className="w-screen text-center">
         <h1 className="mt-10 text-4xl font-[500]">Oops!</h1>
         <p className="text-lg ">Oops,something went wrong. Please try again</p>
-
         <Button
           type="button"
           handleClick={() => navigate("/")}

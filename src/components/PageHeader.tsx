@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 interface Props {
   title: string;
