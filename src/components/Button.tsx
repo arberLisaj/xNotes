@@ -5,13 +5,14 @@ interface Props {
   handleClick?: () => void;
   className?: string;
   type: "submit" | "reset" | "button";
+  title: string;
 }
 
-const Button = ({ children, handleClick, className, type }: Props) => {
+const Button = ({ children, handleClick, className, type, title }: Props) => {
   return (
     <button
       type={type}
-      title="button"
+      title={title}
       className={
         className +
         " rounded p-1 px-2 flex items-center border-none gap-1 text-sm dark:bg-gray-700"

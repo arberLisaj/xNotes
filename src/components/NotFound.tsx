@@ -13,6 +13,7 @@ const NotFound = () => {
           The page you tried to access could not be found
         </p>
         <Button
+          title="home"
           type="button"
           handleClick={() => navigate("/")}
           className="m-auto mt-2 bg-gray-800 text-gray-100 roudned-sm hover:bg-gray-600 active:bg-gray-900"

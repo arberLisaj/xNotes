@@ -91,6 +91,7 @@ const TaskForm = () => {
         </select>
       </section>
       <Button
+        title="create"
         type="submit"
         className="bg-gray-800 p-1.5 px-4 text-gray-100 hover:bg-gray-600 active:bg-gray-900 text-sm"
         handleClick={() => "hi"}

@@ -28,7 +28,7 @@ const Navbar = () => {
           </NavLink>
           <button
             tabIndex={4}
-            title="document"
+            title="darkMode"
             type="button"
             className="p-2 text-xl rounded-sm hover:bg-gray-100 active:bg-gray-200 dark:hover:bg-gray-700"
             onClick={() => setDarkMode()}
