@@ -1,46 +1,27 @@
-# Expenses Application | React & Tailwind 
+## Installation.
 
-*Live Demo : https://arberlisaj.github.io/react-expense-list/*
+_Note: Packages used in this project are installed with yarn and using NPM might lead to a conflict between lock files._
 
-## Features
-
-- ➕ Create Expenses
-- 🗑️ Delete Expenses
-- 📝 Edit Expenses
-- 🔍 Sort Expenses
-- ⛔ Form Validation with Zod
-- 💽 Save Expenses to Local Storage
-
-## Run this project on your local machine
-
-_Note: Packages used in this project are installed with yarn and using NPM can lead to a conflict between lock files._
-
-#### Clone the repository
+### Clone this repository
 
 ```
-git clone
+git clone git@github.com:arberLisaj/xNotes.git
 ```
 
-#### Install dependencies and starting the development server with yarn
+### Install the dependencies.
 
 ```
 yarn
 ```
-
-```
-yarn dev
-```
-
-#### Installing dependencies and starting the development server with NPM
-
 ```
 npm i
 ```
 
+### Start the developement server.
+
+```
+yarn dev
+```
 ```
 npm run dev
 ```
-
-## Screenshot
-
-cumming soon
