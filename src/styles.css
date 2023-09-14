@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+@layer base{
   header .link {
     @apply rounded-sm p-2 text-sm hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-gray-700;
   }

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import Navbar from "../layouts/Navbar";
 import Button from "./Button";
+import Navbar from "@/layouts/Navbar";
 
 const NotFound = () => {
   const navigate = useNavigate();

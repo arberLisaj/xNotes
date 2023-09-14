@@ -1,14 +1,16 @@
+import useStore from "@/store";
 import { useEffect } from "react";
 import { BsMoon, BsSun } from "react-icons/bs";
 import { Link, NavLink } from "react-router-dom";
-import useStore from "../store";
 
 const Navbar = () => {
   const { darkMode, setDarkMode } = useStore();
+
   const toggleDarkMode = () => {
     if (darkMode) document.documentElement.classList.add("dark");
     else document.documentElement.classList.remove("dark");
   };
+
   useEffect(() => {
     toggleDarkMode();
   }, [darkMode]);
@@ -19,7 +21,7 @@ const Navbar = () => {
         <Link to="/" className="text-xl">
           xNotes
         </Link>
-        <section className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <NavLink to="tasks" className="link">
             Task Board
           </NavLink>
@@ -27,15 +29,14 @@ const Navbar = () => {
             Expenses
           </NavLink>
           <button
-            tabIndex={4}
             title="darkMode"
             type="button"
             className="p-2 text-xl rounded-sm hover:bg-gray-100 active:bg-gray-200 dark:hover:bg-gray-700"
             onClick={() => setDarkMode()}
           >
-            {darkMode ? <BsMoon /> : <BsSun />}
+            {darkMode ? <BsMoon className="text-base" /> : <BsSun />}
           </button>
-        </section>
+        </div>
       </nav>
     </header>
   );

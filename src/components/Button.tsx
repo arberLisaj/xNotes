@@ -2,10 +2,10 @@ import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
-  handleClick?: () => void;
+  title?: string;
   className?: string;
+  handleClick?: () => void;
   type: "submit" | "reset" | "button";
-  title: string;
 }
 
 const Button = ({ children, handleClick, className, type, title }: Props) => {

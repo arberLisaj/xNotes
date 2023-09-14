@@ -1,6 +1,6 @@
+import ErrorComponent from "@/components/ErrorComponent";
+import NotFound from "@/components/NotFound";
 import { isRouteErrorResponse, useRouteError } from "react-router-dom";
-import NotFound from "../components/NotFound";
-import ErrorComponent from "../components/ErrorComponent";
 
 const ErrorPage = () => {
   const error = useRouteError();

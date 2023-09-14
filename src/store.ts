@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
-import TaskType from "./entities/task";
+import { TaskType } from "./features/tasks/Task";
+
 interface StoreType {
   tasks: TaskType[];
   deleteTask: (id: number) => void;
