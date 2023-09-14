@@ -1,8 +1,14 @@
+import useStore from "@/store";
+import Expense from "./Expense";
+
 const ExpenseList = () => {
+  const expenses = useStore((store) => store.expenses);
   return (
-    <section className="w-full max-w-[1200px] m-auto">
-      <h1 className="text-center mt-8 dark:text-gray-200">Comming soon...</h1>
-    </section>
+    <div className="w-full max-w-[1100px] m-auto flex gap-4 flex-wrap">
+      {expenses.map((expense) => (
+        <Expense key={expense.id} expense={expense} />
+      ))}
+    </div>
   );
 };
 

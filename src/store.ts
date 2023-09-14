@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 import { TaskType } from "./features/tasks/Task";
+import { ExpenseType } from "./features/expense/Expense";
 
 interface StoreType {
   tasks: TaskType[];
@@ -8,6 +9,9 @@ interface StoreType {
   addTask: (task: TaskType) => void;
   darkMode: boolean;
   setDarkMode: () => void;
+
+  expenses: ExpenseType[];
+  addExpense: (value: ExpenseType) => void;
 }
 
 const useStore = create<StoreType>()(
@@ -23,6 +27,9 @@ const useStore = create<StoreType>()(
           set((store) => ({
             tasks: store.tasks.filter((task) => task.id !== id),
           })),
+        expenses: [],
+        addExpense: (value) =>
+          set((store) => ({ expenses: [value, ...store.expenses] })),
       }),
       {
         name: "store-tasks",
