@@ -81,7 +81,7 @@ const TaskForm = () => {
       </section>
       <section>
         <label htmlFor="priority">Priority</label>
-        <select id="priority" {...register("priority")} className="mb-4">
+        <select id="priority" {...register("priority")} className="mb-6">
           {PRIORITY.map((value, index) => (
             <option key={index} value={value}>
               {value}
@@ -92,7 +92,7 @@ const TaskForm = () => {
       <Button
         title="create"
         type="submit"
-        className="bg-gray-800 p-1.5 px-4 text-gray-100 hover:bg-gray-600 active:bg-gray-900 text-sm"
+        className="bg-gray-800 text-gray-100 hover:bg-gray-600 active:bg-gray-900 text-sm"
         handleClick={() => "hi"}
       >
         create task

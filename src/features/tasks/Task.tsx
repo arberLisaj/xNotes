@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import useStore from "@/store";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import { BsTrash } from "react-icons/bs";
 
 export interface TaskType {
   id: number;
@@ -23,12 +23,11 @@ const Task = ({ task }: Props) => {
       <td>{task.category}</td>
       <td className="relative">
         <Button
-          title="edit"
           type="button"
           className="mx-auto dark:bg-transparent"
           handleClick={() => deleteTask(task.id)}
         >
-          <BsThreeDotsVertical />
+          <BsTrash />
         </Button>
       </td>
     </tr>
