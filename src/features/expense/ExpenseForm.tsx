@@ -28,7 +28,13 @@ const ExpenseForm = () => {
   const navigate = useNavigate();
   const addExpense = useStore((store) => store.addExpense);
   const onSubmit = (data: FieldValues) => {
-    console.log(data);
+    addExpense({
+      id: Date.now(),
+      title: data.title,
+      description: data.description,
+      price: data.price,
+      category: data.category,
+    });
     reset();
     navigate("/expenses");
   };
