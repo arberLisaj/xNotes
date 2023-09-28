@@ -12,6 +12,7 @@ interface StoreType {
 
   expenses: ExpenseType[];
   addExpense: (value: ExpenseType) => void;
+  deleteExpense: (id: number) => void;
 }
 
 const useStore = create<StoreType>()(
@@ -30,6 +31,11 @@ const useStore = create<StoreType>()(
         expenses: [],
         addExpense: (value) =>
           set((store) => ({ expenses: [value, ...store.expenses] })),
+
+        deleteExpense: (id) =>
+          set((store) => ({
+            expenses: store.expenses.filter((e) => e.id !== id),
+          })),
       }),
       {
         name: "store-tasks",

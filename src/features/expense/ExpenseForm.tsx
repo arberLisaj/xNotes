@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import ErrorParagraph from "@/components/ErrorParagraph";
 import useStore from "@/store";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, useForm } from "react-hook-form";
@@ -6,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 
 const schema = z.object({
-  title: z.string().min(3),
-  description: z.string().min(6),
+  title: z.string().min(3, { message: "title is too short" }),
+  description: z.string().min(45, { message: "description is too short" }),
   price: z.number().min(0.5),
   category: z.enum(["Groceries", "Utilities", "Entertainment"], {
     errorMap: () => ({ message: "Category is required." }),
@@ -51,16 +52,7 @@ const ExpenseForm = () => {
         autoFocus
         placeholder="enter a title..."
       />
-      {errors.title && <p className="text-red-500">{errors.title.message}</p>}
-      <label htmlFor="price">Price</label>
-      <input
-        type="number"
-        id="price"
-        {...register("price", { valueAsNumber: true })}
-        placeholder="price"
-      />
-      {errors.price && <p className="text-red-500">{errors.price.message}</p>}
-
+      {errors.title && <ErrorParagraph message={errors.title.message} />}
       <label htmlFor="description" className="mt-2">
         Description
       </label>
@@ -71,26 +63,36 @@ const ExpenseForm = () => {
         placeholder="description..."
       ></textarea>
       {errors.description && (
-        <p className="text-red-500">{errors.description.message}</p>
+        <ErrorParagraph className="mt-1" message={errors.description.message} />
       )}
+      <label htmlFor="price">Price</label>
+      <input
+        type="number"
+        id="price"
+        {...register("price", { valueAsNumber: true })}
+        placeholder="price"
+      />
+      {errors.price && <ErrorParagraph message={errors.price.message} />}
       <label htmlFor="category" className="mt-2">
         Category
       </label>
       <select
         {...register("category")}
         id="category"
-        className="text-gray-700 cursor-pointer mb-5"
+        className="text-gray-700 cursor-pointer"
       >
-        <option>Groceries</option>
-        <option>Utilities</option>
-        <option>Entertainment</option>
+        <option value="">Select a category</option>
+        <option value="Groceries">Groceries</option>
+        <option value="Utilities">Utilities</option>
+        <option value="Entertainment">Entertainment</option>
       </select>
+      {errors.category && <ErrorParagraph message={errors.category.message} />}
       <Button
         title="create"
         type="submit"
-        className="bg-black text-white dark:bg-gray-700"
+        className="bg-black text-white dark:bg-green-700 mt-3"
       >
-        create expense
+        Create
       </Button>
     </form>
   );
