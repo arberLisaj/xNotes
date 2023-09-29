@@ -90,7 +90,7 @@ const ExpenseForm = () => {
       <Button
         title="create"
         type="submit"
-        className="bg-black text-white dark:bg-green-700 mt-3"
+        className="text-white bg-green-700 mt-3"
       >
         Create
       </Button>

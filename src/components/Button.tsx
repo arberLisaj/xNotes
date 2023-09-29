@@ -15,7 +15,7 @@ const Button = ({ children, handleClick, className, type, title }: Props) => {
       title={title}
       className={
         className +
-        " rounded-sm py-1.5 px-3 flex items-center border-none gap-1 text-sm dark:bg-gray-700"
+        " rounded-sm py-1.5 px-3 flex items-center border-none gap-1 text-sm"
       }
       onClick={handleClick}
     >

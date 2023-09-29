@@ -18,7 +18,7 @@ const PageHeader = ({ title, buttonSection, linkAddress }: Props) => {
           title="new"
           type="button"
           handleClick={() => navigate(linkAddress)}
-          className="bg-black font-[500] text-white dark:bg-gray-600"
+          className="bg-black hover:bg-gray-600 font-[500] text-white active:bg-black dark:bg-gray-700 dark:hover:bg-gray-800 dark:active:bg-gray-700"
         >
           {buttonSection}
         </Button>

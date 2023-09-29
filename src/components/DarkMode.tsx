@@ -1,27 +1,24 @@
 import useStore from "@/store";
 import { useEffect } from "react";
-import { BsMoon, BsSun } from "react-icons/bs";
+import { BsSun } from "react-icons/bs";
 
 const DarkMode = () => {
   const { darkMode, setDarkMode } = useStore();
 
-  const toggleDarkMode = () => {
+  useEffect(() => {
     if (darkMode) document.documentElement.classList.add("dark");
     else document.documentElement.classList.remove("dark");
-  };
-
-  useEffect(() => {
-    toggleDarkMode();
   }, [darkMode]);
 
   return (
     <button
       title="darkMode"
       type="button"
-      className="p-2 text-[18px] rounded-sm hover:bg-gray-100 active:bg-gray-200 dark:hover:bg-gray-700"
+      tabIndex={0}
+      className="p-[10px] text-base rounded-sm hover:bg-gray-100 active:bg-gray-200 dark:active:opacity-70 dark:hover:bg-gray-700"
       onClick={() => setDarkMode()}
     >
-      {darkMode ? <BsMoon className="text-base" /> : <BsSun />}
+      <BsSun />
     </button>
   );
 };
