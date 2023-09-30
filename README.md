@@ -3,6 +3,7 @@
 _Note: Packages used in this project are installed with yarn and using NPM might lead to a conflict between lock files._
 
 ## Project Structure
+
 ```
 /
 ├── public/
@@ -11,11 +12,12 @@ _Note: Packages used in this project are installed with yarn and using NPM might
 ├── src/
 │   ├── components/
 |   |   ├── Button.tsx
+|   |   ├── DarkMode.tsx
 |   |   ├── ErrorComponent.tsx
+|   |   ├── ErrorParagraph.tsx
 |   |   ├── NotFound.tsx
 │   │   └── PageHeader.tsx
 │   ├── constants/
-|   |   ├── category.ts
 |   |   ├── priority.ts
 │   |   └── status.ts
 |   ├── features/
@@ -38,17 +40,21 @@ _Note: Packages used in this project are installed with yarn and using NPM might
 |   |   |   ├── NewTaskPage.tsx
 │   |   |   └── TaskListPage.tsx
 │   |   └── ErrorPage.tsx
+|   ├── utils/
+│   |   └── currencyFormatter.ts
 |   ├── main.tsx
 |   ├── routes.tsx
 |   ├── store.ts
 │   └── styles.css
 └── node_moduels
 ```
+
 ## Installation
+
 All the commands below are run from the root of the project, from a terminal:
 |Command|Action|
 |:-|:-|
 |yarn|Installs dependencies|
-|yarn dev| Starts local dev server at localhost:3000| 
+|yarn dev| Starts local dev server at localhost:3000|
 |yarn build | Build your production site to ./dist/
 |yarn preview | Preview your build locally, before deploying|

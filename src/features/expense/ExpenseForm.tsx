@@ -14,6 +14,7 @@ const schema = z.object({
     errorMap: () => ({ message: "Category is required." }),
   }),
 });
+
 type formData = z.infer<typeof schema>;
 
 const ExpenseForm = () => {
@@ -50,7 +51,7 @@ const ExpenseForm = () => {
         id="title"
         {...register("title")}
         autoFocus
-        placeholder="enter a title..."
+        placeholder="title"
       />
       {errors.title && <ErrorParagraph message={errors.title.message} />}
       <label htmlFor="description" className="mt-2">
@@ -60,7 +61,7 @@ const ExpenseForm = () => {
         {...register("description")}
         id="description"
         className="block w-full p-2 outline-none resize-none max-w-[700px] dark:text-white border border-gray-300 dark:border-none dark:bg-gray-700 rounded"
-        placeholder="description..."
+        placeholder="description"
       ></textarea>
       {errors.description && (
         <ErrorParagraph className="mt-1" message={errors.description.message} />
@@ -90,7 +91,7 @@ const ExpenseForm = () => {
       <Button
         title="create"
         type="submit"
-        className="text-white bg-green-700 mt-3"
+        className="text-white bg-green-700 hover:bg-green-600 active:bg-green-700 mt-3"
       >
         Create
       </Button>

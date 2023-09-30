@@ -5,6 +5,9 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+p {
+  word-break: break-word;
+}
 
 @layer base {
   header .link {

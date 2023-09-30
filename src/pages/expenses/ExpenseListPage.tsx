@@ -6,7 +6,7 @@ const ExpenseListPage = () => {
   return (
     <section>
       <PageHeader
-        title="Expenses"
+        title="My expenses"
         linkAddress="new"
         buttonSection={
           <>

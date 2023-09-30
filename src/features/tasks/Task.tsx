@@ -16,7 +16,7 @@ interface Props {
 const Task = ({ task }: Props) => {
   const deleteTask = useStore((store) => store.deleteTask);
   return (
-    <tr className="text-sm">
+    <tr className="text-sm hover:bg-gray-50 dark:hover:bg-slate-800">
       <td className="w-full text-left pl-3">{task.title.substring(0, 400)}</td>
       <td>{task.status}</td>
       <td>{task.priority}</td>

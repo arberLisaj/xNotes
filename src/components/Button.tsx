@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
 interface Props {
-  children: ReactNode;
   title?: string;
   className?: string;
+  children: ReactNode;
   handleClick?: () => void;
   type: "submit" | "reset" | "button";
 }

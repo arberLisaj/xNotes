@@ -21,7 +21,7 @@ const Expense = ({
   const deleteExpense = useStore((store) => store.deleteExpense);
   const formattedPrice = currencyFormatter(price);
   return (
-    <div className="max-w-[350px] flex flex-col border-2 dark:border-gray-600  py-1 px-3 rounded-sm w-full justify-between dark:text-gray-100">
+    <div className="max-w-[350px] flex flex-col border-2 dark:border-gray-600  py-1 px-3 rounded-sm w-full justify-between hover:shadow-sm cursor-pointer dark:text-gray-100">
       <div className="flex justify-between items-center pt-2">
         <h1 className="text-base font-bold capitalize">{title}</h1>
         <p

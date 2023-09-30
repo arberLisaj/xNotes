@@ -5,7 +5,7 @@ const TaskListPage = () => {
   return (
     <section>
       <PageHeader
-        title="Tasks"
+        title="My tasks"
         linkAddress="new"
         buttonSection={
           <>

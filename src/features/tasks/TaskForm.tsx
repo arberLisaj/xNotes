@@ -57,7 +57,7 @@ const TaskForm = () => {
         {...register("inputValue")}
         type="text"
         id="title"
-        placeholder="Description..."
+        placeholder="description"
       />
       {errors.inputValue && (
         <p className="mb-2 text-red-500 text-sm dark:text-red-400">
@@ -96,8 +96,7 @@ const TaskForm = () => {
       <Button
         title="create"
         type="submit"
-        className="px-4 mt-3 text-gray-100 hover:bg-gray-600 active:bg-gray-900 bg-green-700 text-sm"
-        handleClick={() => "hi"}
+        className="text-white bg-green-700 hover:bg-green-600 active:bg-green-700 mt-3"
       >
         Create
       </Button>
