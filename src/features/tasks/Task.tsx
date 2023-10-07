@@ -10,10 +10,7 @@ export interface TaskType {
   category: string;
 }
 
-interface Props {
-  task: TaskType;
-}
-const Task = ({ task }: Props) => {
+const Task = ({ task }: { task: TaskType }) => {
   const deleteTask = useStore((store) => store.deleteTask);
   return (
     <tr className="text-sm hover:bg-gray-50 dark:hover:bg-slate-800">

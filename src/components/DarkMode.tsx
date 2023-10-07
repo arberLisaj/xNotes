@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { BsSun } from "react-icons/bs";
 
 const DarkMode = () => {
-  const { darkMode, setDarkMode } = useStore();
+  const darkMode = useStore((s) => s.darkMode);
+  const setDarkMode = useStore((s) => s.setDarkMode);
 
   useEffect(() => {
     if (darkMode) document.documentElement.classList.add("dark");

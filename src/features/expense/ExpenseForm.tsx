@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import ErrorParagraph from "@/components/ErrorParagraph";
+import EXPENSE from "@/constants/expense";
 import useStore from "@/store";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, useForm } from "react-hook-form";
@@ -8,7 +9,7 @@ import { z } from "zod";
 
 const schema = z.object({
   title: z.string().min(3, { message: "title is too short" }),
-  description: z.string().min(45, { message: "description is too short" }),
+  description: z.string().min(40, { message: "description is too short" }),
   price: z.number().min(0.5),
   category: z.enum(["Groceries", "Utilities", "Entertainment"], {
     errorMap: () => ({ message: "Category is required." }),
@@ -29,6 +30,7 @@ const ExpenseForm = () => {
 
   const navigate = useNavigate();
   const addExpense = useStore((store) => store.addExpense);
+
   const onSubmit = (data: FieldValues) => {
     addExpense({
       id: Date.now(),
@@ -40,6 +42,7 @@ const ExpenseForm = () => {
     reset();
     navigate("/expenses");
   };
+
   return (
     <form
       className="py-8 p-4 rounded border-2 dark:border-gray-700 max-w-[1100px] m-auto"
@@ -83,9 +86,11 @@ const ExpenseForm = () => {
         className="text-gray-700 cursor-pointer"
       >
         <option value="">Select a category</option>
-        <option value="Groceries">Groceries</option>
-        <option value="Utilities">Utilities</option>
-        <option value="Entertainment">Entertainment</option>
+        {EXPENSE.map((e) => (
+          <option key={e} value={e}>
+            {e}
+          </option>
+        ))}
       </select>
       {errors.category && <ErrorParagraph message={errors.category.message} />}
       <Button

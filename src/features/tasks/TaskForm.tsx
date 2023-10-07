@@ -1,11 +1,13 @@
+import Button from "@/components/Button";
+import ErrorParagraph from "@/components/ErrorParagraph";
+import CATEGORY from "@/constants/category";
+import PRIORITY from "@/constants/priority";
+import STATUS from "@/constants/status";
+import useStore from "@/store";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import z from "zod";
-import Button from "../../components/Button";
-import STATUS from "../../constants/status";
-import useStore from "../../store";
-import ErrorParagraph from "@/components/ErrorParagraph";
 
 const schema = z.object({
   inputValue: z.string().min(3, { message: "title is too short" }),
@@ -68,8 +70,11 @@ const TaskForm = () => {
       <label htmlFor="category">category</label>
       <select {...register("category")} id="category">
         <option value="">Select a category</option>
-        <option value="Work">Work</option>
-        <option value="Personal">Personal</option>
+        {CATEGORY.map((c) => (
+          <option key={c} value={c}>
+            {c}
+          </option>
+        ))}
       </select>
       {errors.category && <ErrorParagraph message={errors.category?.message} />}
 
@@ -87,9 +92,11 @@ const TaskForm = () => {
       <label htmlFor="priority">Priority</label>
       <select id="priority" {...register("priority")}>
         <option value="">Select a priority</option>
-        <option value="High">High</option>
-        <option value="Medium">Medium</option>
-        <option value="Low">Low</option>
+        {PRIORITY.map((p) => (
+          <option key={p} value={p}>
+            {p}
+          </option>
+        ))}
       </select>
       {errors.priority && <ErrorParagraph message={errors.priority?.message} />}
 

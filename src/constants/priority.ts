@@ -1,2 +1,2 @@
-const PRIORITY = ["High", "Medium", "Low"] as const;
+const PRIORITY = ["High", "Medium", "Low"];
 export default PRIORITY;

@@ -1,16 +1,15 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
-import { TaskType } from "./features/tasks/Task";
 import { ExpenseType } from "./features/expense/Expense";
+import { TaskType } from "./features/tasks/Task";
 
 interface StoreType {
   tasks: TaskType[];
+  darkMode: boolean;
+  expenses: ExpenseType[];
+  setDarkMode: () => void;
   deleteTask: (id: number) => void;
   addTask: (task: TaskType) => void;
-  darkMode: boolean;
-  setDarkMode: () => void;
-
-  expenses: ExpenseType[];
   addExpense: (value: ExpenseType) => void;
   deleteExpense: (id: number) => void;
 }

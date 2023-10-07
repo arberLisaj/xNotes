@@ -6,10 +6,14 @@
   font-family: "Poppins", sans-serif;
 }
 p {
-  word-break: break-word;
+  /* word-break: break-word; */
+  word-wrap: break-word;
 }
 
 @layer base {
+  body {
+    @apply dark:bg-gray-900 dark:text-white;
+  }
   header .link {
     @apply rounded-sm p-2 text-sm hover:bg-slate-100 active:bg-gray-200 dark:active:bg-gray-800 dark:hover:bg-gray-700;
   }

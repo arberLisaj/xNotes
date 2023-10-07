@@ -5,23 +5,22 @@ import { BsTrash } from "react-icons/bs";
 
 export interface ExpenseType {
   id: number;
+  price: number;
   title: string;
   description: string;
-  price: number;
   category: "Groceries" | "Utilities" | "Entertainment";
-}
-
-interface Props {
-  expense: ExpenseType;
 }
 
 const Expense = ({
   expense: { id, title, description, price, category },
-}: Props) => {
+}: {
+  expense: ExpenseType;
+}) => {
   const deleteExpense = useStore((store) => store.deleteExpense);
   const formattedPrice = currencyFormatter(price);
+
   return (
-    <div className="max-w-[350px] flex flex-col border-2 dark:border-gray-600  py-1 px-3 rounded-sm w-full justify-between hover:shadow-sm cursor-pointer dark:text-gray-100">
+    <div className="max-w-[360px] flex flex-col border-2 dark:border-gray-700 py-1 px-3 rounded-sm w-full justify-between hover:shadow-sm cursor-pointer dark:text-gray-100">
       <div className="flex justify-between items-center pt-2">
         <h1 className="text-base font-bold capitalize">{title}</h1>
         <p
@@ -38,14 +37,9 @@ const Expense = ({
         </p>
       </div>
       <p className="mt-2 mb-1">{description}</p>
-
       <footer className="border-t flex justify-between dark:border-gray-600 items-center gap-3 pt-2 pb-1 mt-2">
-        <p className="font-bold">{formattedPrice}</p>
-        <button
-          className="hover:text-red-800"
-          type="button"
-          onClick={() => deleteExpense(id)}
-        >
+        <p>{formattedPrice}</p>
+        <button type="button" onClick={() => deleteExpense(id)}>
           <BsTrash />
         </button>
       </footer>
