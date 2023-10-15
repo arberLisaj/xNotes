@@ -1,5 +1,5 @@
 import PageHeader from "@/components/PageHeader";
-import ExpenseForm from "@/features/expense/ExpenseForm";
+import ExpenseForm from "@/features/expenses/ExpenseForm";
 import { MdOutlineArrowBack } from "react-icons/md";
 
 const NewExpensePage = () => {

@@ -21,7 +21,7 @@ const Expense = ({
 
   return (
     <div className="max-w-[360px] flex flex-col border-2 dark:border-gray-700 py-1 px-3 rounded-sm w-full justify-between hover:shadow-sm cursor-pointer dark:text-gray-100">
-      <div className="flex justify-between items-center pt-2">
+      <div className="flex items-center justify-between pt-2">
         <h1 className="text-base font-bold capitalize">{title}</h1>
         <p
           className={classNames(
@@ -37,7 +37,7 @@ const Expense = ({
         </p>
       </div>
       <p className="mt-2 mb-1">{description}</p>
-      <footer className="border-t flex justify-between dark:border-gray-600 items-center gap-3 pt-2 pb-1 mt-2">
+      <footer className="flex items-center justify-between gap-3 pt-2 pb-1 mt-2 border-t dark:border-gray-600">
         <p>{formattedPrice}</p>
         <button type="button" onClick={() => deleteExpense(id)}>
           <BsTrash />

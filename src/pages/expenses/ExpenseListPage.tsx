@@ -1,5 +1,5 @@
 import PageHeader from "@/components/PageHeader";
-import ExpenseList from "@/features/expense/ExpenseList";
+import ExpenseList from "@/features/expenses/ExpenseList";
 import { BiPlus } from "react-icons/bi";
 
 const ExpenseListPage = () => {

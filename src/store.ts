@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
-import { ExpenseType } from "./features/expense/Expense";
+import { ExpenseType } from "./features/expenses/Expense";
 import { TaskType } from "./features/tasks/Task";
 
 interface StoreType {

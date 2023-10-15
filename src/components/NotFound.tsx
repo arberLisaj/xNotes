@@ -16,7 +16,7 @@ const NotFound = () => {
           title="home"
           type="button"
           handleClick={() => navigate("/")}
-          className="m-auto mt-2 bg-gray-800 dark:bg-gray-600 text-gray-100 roudned-sm hover:bg-gray-600 active:bg-gray-900"
+          className="m-auto mt-2 text-gray-100 bg-gray-800 dark:bg-gray-600 roudned-sm hover:bg-gray-600 active:bg-gray-900"
         >
           Take me Home
         </Button>

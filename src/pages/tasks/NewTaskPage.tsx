@@ -1,6 +1,6 @@
-import PageHeader from "../../components/PageHeader";
+import PageHeader from "@/components/PageHeader";
+import TaskForm from "@/features/tasks/TaskForm";
 import { MdOutlineArrowBack } from "react-icons/md";
-import TaskForm from "../../features/tasks/TaskForm";
 const NewTaskPage = () => {
   return (
     <section className="max-w-[1100px] m-auto">

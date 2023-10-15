@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import ErrorParagraph from "@/components/ErrorParagraph";
-import EXPENSE from "@/constants/expense";
+import { EXPENSE } from "@/constants/constants";
 import useStore from "@/store";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, useForm } from "react-hook-form";
@@ -9,7 +9,7 @@ import { z } from "zod";
 
 const schema = z.object({
   title: z.string().min(3, { message: "title is too short" }),
-  description: z.string().min(40, { message: "description is too short" }),
+  description: z.string().min(30, { message: "description is too short" }),
   price: z.number().min(0.5),
   category: z.enum(["Groceries", "Utilities", "Entertainment"], {
     errorMap: () => ({ message: "Category is required." }),
@@ -96,7 +96,7 @@ const ExpenseForm = () => {
       <Button
         title="create"
         type="submit"
-        className="text-white bg-green-700 hover:bg-green-600 active:bg-green-700 mt-3"
+        className="mt-3 text-white bg-green-700 hover:bg-green-600 active:bg-green-700"
       >
         Create
       </Button>

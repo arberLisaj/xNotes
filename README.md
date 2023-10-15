@@ -18,10 +18,7 @@ _Note: Packages used in this project are installed with yarn and using NPM might
 |   |   ├── NotFound.tsx
 │   │   └── PageHeader.tsx
 │   ├── constants/
-|   |   ├── category.ts
-|   |   ├── expense.ts
-|   |   ├── priority.ts
-│   |   └── status.ts
+│   |   └── constants.ts
 |   ├── features/
 |   |   ├── expenses/
 |   |   |   ├── Expense.tsx

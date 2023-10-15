@@ -6,8 +6,12 @@
   font-family: "Poppins", sans-serif;
 }
 p {
-  /* word-break: break-word; */
   word-wrap: break-word;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @layer base {
@@ -37,10 +41,5 @@ p {
   }
   option {
     @apply: border-none;
-  }
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
   }
 }

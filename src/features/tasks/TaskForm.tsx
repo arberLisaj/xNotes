@@ -1,8 +1,6 @@
 import Button from "@/components/Button";
 import ErrorParagraph from "@/components/ErrorParagraph";
-import CATEGORY from "@/constants/category";
-import PRIORITY from "@/constants/priority";
-import STATUS from "@/constants/status";
+import * as constants from "@/constants/constants";
 import useStore from "@/store";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, useForm } from "react-hook-form";
@@ -70,7 +68,7 @@ const TaskForm = () => {
       <label htmlFor="category">category</label>
       <select {...register("category")} id="category">
         <option value="">Select a category</option>
-        {CATEGORY.map((c) => (
+        {constants.CATEGORY.map((c) => (
           <option key={c} value={c}>
             {c}
           </option>
@@ -81,7 +79,7 @@ const TaskForm = () => {
       <label htmlFor="status">Status</label>
       <select id="status" {...register("status")}>
         <option value="">Select a status</option>
-        {STATUS.map((status, index) => (
+        {constants.STATUS.map((status, index) => (
           <option key={index} value={status}>
             {status}
           </option>
@@ -92,7 +90,7 @@ const TaskForm = () => {
       <label htmlFor="priority">Priority</label>
       <select id="priority" {...register("priority")}>
         <option value="">Select a priority</option>
-        {PRIORITY.map((p) => (
+        {constants.PRIORITY.map((p) => (
           <option key={p} value={p}>
             {p}
           </option>

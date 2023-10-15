@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header className="max-w-full py-2 sticky top-0 dark:text-gray-200 border-b dark:border-slate-700 bg-white dark:bg-gray-900 shadow-md">
+    <header className="sticky top-0 max-w-full py-2 bg-white border-b shadow-md dark:text-gray-200 dark:border-slate-700 dark:bg-gray-900">
       <nav className="flex justify-between items-center max-w-[1100px] m-auto">
         <Link to="/tasks" className="text-xl font-bold hover:opacity-60">
           xNotes

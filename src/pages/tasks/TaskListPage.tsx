@@ -1,6 +1,6 @@
-import PageHeader from "../../components/PageHeader";
+import PageHeader from "@/components/PageHeader";
+import TaskTable from "@/features/tasks/TaskTable";
 import { BiPlus } from "react-icons/bi";
-import TaskTable from "../../features/tasks/TaskTable";
 const TaskListPage = () => {
   return (
     <section>
