@@ -1,7 +1,3 @@
-## Kanban app built with React , Tailwind and Zustand.
-
-_Note: Packages used in this project are installed with yarn and using NPM might lead to a conflict between lock files._
-
 ## Project Structure
 
 ```
@@ -54,6 +50,6 @@ All the commands below are run from the root of the project, from a terminal:
 |Command|Action|
 |:-|:-|
 |yarn|Installs dependencies|
-|yarn dev| Starts local dev server at localhost:3000|
+|yarn dev| Starts local dev server at localhost:5173|
 |yarn build | Build your production site to ./dist/
 |yarn preview | Preview your build locally, before deploying|

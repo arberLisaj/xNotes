@@ -22,7 +22,7 @@ input[type="number"]::-webkit-outer-spin-button {
     @apply rounded-sm p-2 text-sm hover:bg-slate-100 active:bg-gray-200 dark:active:bg-gray-800 dark:hover:bg-gray-700;
   }
   th {
-    @apply px-6 text-center border-x p-2 font-normal text-sm bg-gray-100 dark:bg-slate-900 border-gray-300 dark:border-gray-600;
+    @apply px-6 text-center border-x p-2 font-normal text-sm bg-gray-100 dark:bg-slate-800 border-gray-300 dark:border-gray-600;
   }
   td {
     @apply p-2 px-1 text-center border break-all border-gray-300 dark:border-gray-600;
